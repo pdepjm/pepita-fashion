@@ -1,10 +1,27 @@
 import aves.*
+import colores.*
 import wollok.game.*
 
 program iniciarJuego {
+	//configuro el juego
 	game.cellSize(80)
+	
+	game.height(10)
+	game.width(10)
 	
 	game.addVisual(pepita)
 	
+	game.addVisual(manolo)
+	
+	keyboard.left().onPressDo({ pepita.posicion(pepita.position().left(1)) })
+	keyboard.right().onPressDo({ pepita.posicion(pepita.position().right(1)) })
+	keyboard.down().onPressDo({ pepita.posicion(pepita.position().down(1)) })
+	keyboard.up().onPressDo({ pepita.posicion(pepita.position().up(1)) })
+	
+	
+	keyboard.r().onPressDo( {pepita.cambiarColor(paleta.colorAlAzar())} )
+	keyboard.n().onPressDo({ pepita.deciTuColor() })
+	
+	//inicio el juego
 	game.start()
 }
