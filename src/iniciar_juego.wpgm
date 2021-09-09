@@ -1,0 +1,10 @@
+import aves.*
+import wollok.game.*
+
+program iniciarJuego {
+	game.cellSize(80)
+	
+	game.addVisual(pepita)
+	
+	game.start()
+}
